@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio</title>
+  <style>
+    /* Reset de margens e paddings padrão do navegador */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Fonte base e altura total da página */
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Estrutura vertical da página */
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Cabeçalho fixo com fundo escuro */
+    header {
+      background-color: #666;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      flex-shrink: 0;
+    }
+
+    /* Rodapé fixo */
+    footer {
+      background-color: #666;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      flex-shrink: 0;
+    }
+
+    /* Navegação entre páginas */
+    nav {
+      background-color: #bbb;
+      text-align: center;
+      padding: 0.5rem 0;
+      flex-shrink: 0;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Área principal com rolagem e fundo claro */
+    main {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 1rem;
+      background-color: #f9f9f9;
+    }
+
+    /* Bloco de conteúdo com efeito de cartão */
+    .conteudo {
+      max-width: 960px;
+      margin: auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      text-align: justify;
+      line-height: 1.8; /* espaçamento entre linhas */
+      font-size: 1.05rem; /* tamanho de fonte ajustado */
+    }
+
+    /* Layout flexível com colunas: imagens e texto */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    /* Coluna de imagens à esquerda */
+    .imagens {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .imagens img {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      display: block;
+    }
+
+    /* Coluna de texto à direita */
+    .texto {
+      flex: 1.5;
+      min-width: 400px;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 1.2rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho fixo -->
+  <header>
+    <h1>Portfólio Pessoal (CV online)</h1>
+  </header>
+
+  <!-- Navegação entre páginas -->
+  <nav>
+    <a href="index.html">Sobre Mim</a>
+    <a href="formacao.html">Formação</a>
+    <a href="portfolio.html">Portfólio</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+
+  <!-- Conteúdo principal da página -->
+  <main>
+    <div class="conteudo">
+      <div class="container">
+
+        <!-- Coluna de imagens à esquerda -->
+        <div class="imagens">
+          <img src="Venturi.jpg" alt="Venturi">
+          <img src="Interno.jpg" alt="Vista interna">
+          <img src="Flow.png" alt="Esquema de fluxo">
+        </div>
+
+        <!-- Coluna de texto à direita -->
+        <div class="texto">
+          <h1>Portfólio</h1>
+          <p>Abaixo estão listados alguns dos artigos científicos que publiquei durante minha trajetória acadêmica e profissional.</p>
+
+          <ul>
+            <li><strong>Engineering Design of an Electronic Flow Transducer Based on a Venturi Differential Pressure Device</strong><br>
+              <em>Tecnologia Magazine</em>, Universidade de Fortaleza, p. 55 - 64, 2004.</li>
+
+            <li><strong>Venturi meter design oriented by computational simulation: Flow Straightener, throat geometry and fluid influence on discharge coefficient</strong><br>
+              <em>CONEM 2004 - III National Congress of Mechanical Engineering</em></li>
+
+            <li><strong>Numerical Study on the Effects of Flow Straighteners Geometry and Installation on Upstream Flow Condition in a Venturi Meter</strong><br>
+              <em>CILAMCE 2003</em>, Ouro Preto – MG, Brasil.</li>
+          </ul>
+
+          <p>Para obter mais informações, entre em contato através do formulário na seção "Contato" deste site.</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Rodapé fixo -->
+  <footer>
+    <p>&copy; 2025 Ronald Martins - Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

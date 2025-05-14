@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Fonte padrão e altura total */
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Layout em coluna */
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Cabeçalho com fundo escuro */
+    header {
+      background-color: #666;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      flex-shrink: 0;
+    }
+
+    /* Rodapé com altura padronizada */
+    footer {
+      background-color: #666;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      min-height: 64px;
+      font-size: 1rem;
+      line-height: 1.4;
+      flex-shrink: 0;
+    }
+
+    /* Menu de navegação */
+    nav {
+      background-color: #bbb;
+      text-align: center;
+      padding: 0.5rem 0;
+      flex-shrink: 0;
+    }
+
+    /* Links do menu */
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Área principal */
+    main {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 1rem;
+      background-color: #f9f9f9;
+    }
+
+    /* Bloco central de conteúdo */
+    .conteudo {
+      max-width: 960px;
+      margin: auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Container com formulário e imagem */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    /* Coluna do formulário */
+    .formulario {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    /* Estilo do formulário */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      background-color: #666;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      align-self: flex-start;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    /* Área que exibe a mensagem salva */
+    #mensagem-salva {
+      background-color: #eee;
+      padding: 1rem;
+      border-radius: 4px;
+      margin-top: 2rem;
+      max-width: 480px;
+      font-size: 0.85rem;
+    }
+
+    #mensagem-salva h2 {
+      margin-top: 0;
+      font-size: 1rem;
+    }
+
+    /* Coluna da imagem lateral à direita */
+    .imagem-lateral {
+      flex: 1;
+      min-width: 240px;
+      display: flex;
+      justify-content: center;
+      align-items: center; /* centraliza verticalmente */
+    }
+
+    /* Estilo da imagem */
+    .imagem-lateral img {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 4px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho da página -->
+  <header>
+    <h1>Portfólio Pessoal (CV online)</h1>
+  </header>
+
+  <!-- Menu de navegação -->
+  <nav>
+    <a href="index.html">Sobre Mim</a>
+    <a href="formacao.html">Formação</a>
+    <a href="portfolio.html">Portfólio</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <div class="conteudo">
+      <div class="container">
+
+        <!-- Coluna do formulário -->
+        <div class="formulario">
+          <h1>Contato</h1>
+
+          <!-- Formulário de contato -->
+          <form id="form-contato">
+            <div>
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" required>
+            </div>
+
+            <div>
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" required>
+            </div>
+
+            <div>
+              <label for="mensagem">Mensagem:</label>
+              <textarea id="mensagem" required></textarea>
+            </div>
+
+            <button type="submit">Salvar Mensagem</button>
+          </form>
+
+          <!-- Exibição da mensagem salva -->
+          <div id="mensagem-salva" style="display:none;">
+            <h2>Mensagem Recebida:</h2>
+            <p><strong>Nome:</strong> <span id="exibir-nome"></span></p>
+            <p><strong>Email:</strong> <span id="exibir-email"></span></p>
+            <p><strong>Mensagem:</strong> <span id="exibir-mensagem"></span></p>
+            <button onclick="excluirMensagem()">Excluir Mensagem</button>
+          </div>
+        </div>
+
+        <!-- Coluna com imagem à direita centralizada -->
+        <div class="imagem-lateral">
+          <img src="computer-1867758_960_720.jpg" alt="Computador">
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Ronald Martins - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script de controle localStorage -->
+  <script>
+    const form = document.getElementById("form-contato");
+
+    window.onload = function () {
+      const nome = localStorage.getItem("nome");
+      const email = localStorage.getItem("email");
+      const mensagem = localStorage.getItem("mensagem");
+
+      if (nome && email && mensagem) {
+        document.getElementById("exibir-nome").textContent = nome;
+        document.getElementById("exibir-email").textContent = email;
+        document.getElementById("exibir-mensagem").textContent = mensagem;
+        document.getElementById("mensagem-salva").style.display = "block";
+      }
+    };
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const mensagem = document.getElementById("mensagem").value;
+
+      localStorage.setItem("nome", nome);
+      localStorage.setItem("email", email);
+      localStorage.setItem("mensagem", mensagem);
+
+      alert("Mensagem salva com sucesso!");
+      location.reload();
+    });
+
+    function excluirMensagem() {
+      localStorage.removeItem("nome");
+      localStorage.removeItem("email");
+      localStorage.removeItem("mensagem");
+      alert("Mensagem excluída com sucesso!");
+      location.reload();
+    }
+  </script>
+
+</body>
+</html>
+
+
+
