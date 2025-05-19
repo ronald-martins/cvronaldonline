@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="estilo.css" />
+  <link rel="stylesheet" href="idioma.css" />
+</head>
+<body>
+
+  <!-- Language selection links -->
+  <div class="idiomas" aria-label="Language selection">
+    <a href="contato.html" class="link-pt">PT</a>
+    <a href="contato_en.html" class="link-en">EN</a>
+  </div>
+
+  <!-- Accessibility link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header role="banner">
+    <h1>Personal Portfolio - Ronald A. Martins</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav role="navigation" aria-label="Main menu">
+    <a href="index_en.html">About Me</a>
+    <a href="formacao_en.html">Education</a>
+    <a href="portfolio_en.html">Portfolio</a>
+    <a href="contato_en.html">Contact</a>
+  </nav>
+
+  <!-- Main content -->
+  <main id="main-content" role="main">
+    <div class="conteudo">
+      <h1>Contact</h1>
+      <div class="bloco">
+
+        <!-- Form column -->
+        <div class="formulario">
+          <form id="form-contato">
+            <div>
+              <label for="nome">Name:</label>
+              <input type="text" id="nome" required>
+            </div>
+
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" required>
+            </div>
+
+            <div>
+              <label for="mensagem">Message:</label>
+              <textarea id="mensagem" required></textarea>
+            </div>
+
+            <button type="submit">Save Message</button>
+          </form>
+
+          <!-- Saved message display -->
+          <div id="mensagem-salva" style="display:none;">
+            <h2>Message Received:</h2>
+            <p><strong>Name:</strong> <span id="exibir-nome"></span></p>
+            <p><strong>Email:</strong> <span id="exibir-email"></span></p>
+            <p><strong>Message:</strong> <span id="exibir-mensagem"></span></p>
+            <button onclick="excluirMensagem()">Delete Message</button>
+          </div>
+        </div>
+
+        <!-- Side image -->
+        <div class="imagem-lateral">
+          <img src="computer-1867758_960_720.jpg" alt="Laptop representing digital communication">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 Ronald A. Martins - All rights reserved.</p>
+  </footer>
+
+  <!-- localStorage script -->
+  <script>
+    const form = document.getElementById("form-contato");
+
+    window.onload = function () {
+      const nome = localStorage.getItem("nome");
+      const email = localStorage.getItem("email");
+      const mensagem = localStorage.getItem("mensagem");
+
+      if (nome && email && mensagem) {
+        document.getElementById("exibir-nome").textContent = nome;
+        document.getElementById("exibir-email").textContent = email;
+        document.getElementById("exibir-mensagem").textContent = mensagem;
+        document.getElementById("mensagem-salva").style.display = "block";
+      }
+    };
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const mensagem = document.getElementById("mensagem").value;
+
+      localStorage.setItem("nome", nome);
+      localStorage.setItem("email", email);
+      localStorage.setItem("mensagem", mensagem);
+
+      alert("Message saved successfully!");
+      location.reload();
+    });
+
+    function excluirMensagem() {
+      localStorage.removeItem("nome");
+      localStorage.removeItem("email");
+      localStorage.removeItem("mensagem");
+      alert("Message deleted successfully!");
+      location.reload();
+    }
+  </script>
+
+</body>
+</html>

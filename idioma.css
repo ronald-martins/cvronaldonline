@@ -1,0 +1,45 @@
+/* idioma.css */
+
+.idiomas {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 0.9rem;
+  z-index: 100;
+}
+
+.idiomas a {
+  text-decoration: none;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.link-pt {
+  color: #002776; /* Azul escuro da bandeira do Brasil */
+}
+
+.link-en {
+  color: #cc0000; /* Vermelho escuro */
+}
+
+.idiomas a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade opcional para telas muito pequenas */
+@media (max-width: 400px) {
+  .idiomas {
+    top: auto;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+
+  .idiomas a {
+    margin-left: 6px;
+  }
+}
+

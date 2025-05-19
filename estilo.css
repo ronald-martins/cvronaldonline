@@ -1,0 +1,232 @@
+/* === Reset e configurações básicas === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+/* === Acessibilidade === */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background: #000;
+  color: #fff;
+  z-index: 1000;
+}
+
+/* === Cabeçalho, Rodapé e Navegação === */
+header {
+  background-color: #666;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer {
+  background-color: #666;
+  color: white;
+  text-align: center;
+  padding: 0.3rem 0;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  margin-top: 1rem;
+}
+
+nav {
+  background-color: #bbb;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* === Área principal === */
+main {
+  flex: 1;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.conteudo {
+  max-width: 960px;
+  margin: auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+/* === Blocos com imagem e texto === */
+.bloco {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+/* Coluna de texto à direita */
+.bloco .texto, .formulario {
+  flex: 2;
+  min-width: 320px;
+  text-align: justify;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Coluna de imagens empilhadas verticalmente */
+.bloco .imagem {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.imagem-lateral {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo das imagens */
+.bloco img, .imagem-lateral img {
+  width: 100%;
+  max-width: 240px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+/* === Formulários === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background-color: #666;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+#mensagem-salva {
+  background-color: #eee;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 2rem;
+  max-width: 480px;
+  font-size: 0.85rem;
+}
+
+#mensagem-salva h2 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+/* === Responsividade === */
+@media (max-width: 600px) {
+  body {
+    font-size: 1rem; /* Aumenta legibilidade em telas pequenas */
+  }
+
+  .conteudo {
+    padding: 1rem;
+    box-shadow: none; /* Remove sombra no mobile */
+  }
+
+  .bloco {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .formulario,
+  .imagem,
+  .imagem-lateral,
+  .bloco .texto {
+    min-width: 100%;
+  }
+
+  .bloco img {
+    max-height: 200px;
+  }
+
+  nav {
+    padding: 0.3rem 0;
+  }
+
+  nav a {
+    display: inline-block; /* Permite quebra de linha */
+    margin: 0.4rem 0.4rem;
+    font-size: 0.9rem;
+  }
+}

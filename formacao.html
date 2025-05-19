@@ -4,132 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Formação</title>
-  <style>
-    /* Reset de margens/paddings padrão do navegador */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Fonte base e altura total da página */
-    html, body {
-      height: 100%;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Estrutura vertical da página */
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Cabeçalho fixo com fundo escuro */
-    header {
-      background-color: #666;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-      flex-shrink: 0;
-    }
-
-    /* Rodapé fixo */
-    footer {
-      background-color: #666;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-      min-height: 64px;
-      font-size: 1rem;
-      line-height: 1.4;
-      flex-shrink: 0;
-    }
-
-    /* Navegação fixa */
-    nav {
-      background-color: #bbb;
-      text-align: center;
-      padding: 0.5rem 0;
-      flex-shrink: 0;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: black;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Área principal da página */
-    main {
-      flex-grow: 1;
-      overflow-y: auto;
-      padding: 1rem;
-      background-color: #f9f9f9;
-    }
-
-    /* Bloco de conteúdo centralizado */
-    .conteudo {
-      max-width: 960px;
-      margin: auto;
-      background-color: white;
-      padding: 2rem;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      text-align: justify;
-      line-height: 1.8;
-      font-size: 1.05rem;
-    }
-
-    /* Layout lado a lado */
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 3rem;
-    }
-
-    .texto {
-      flex: 2;
-      min-width: 320px;
-    }
-
-    .imagens {
-      flex: 1;
-      min-width: 280px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .imagens img {
-      width: 100%;
-      max-width: 240px;
-      border-radius: 4px;
-    }
-
-    h1 {
-      margin-bottom: 1rem;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-    }
-  </style>
+  <link rel="stylesheet" href="estilo.css" />
+  <link rel="stylesheet" href="idioma.css" />
 </head>
 <body>
+
+  <!-- Links de idioma -->
+  <div class="idiomas" aria-label="Escolha de idioma">
+    <a href="formacao.html" class="link-pt">PT</a>
+    <a href="formacao_en.html" class="link-en">EN</a>
+  </div>
+
+  <!-- Link de acessibilidade -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
   <!-- Cabeçalho -->
-  <header>
-    <h1>Portfólio Pessoal (CV online)</h1>
+  <header role="banner">
+    <h1>Portfólio Pessoal - Ronald A. Martins</h1>
   </header>
 
-  <!-- Navegação -->
-  <nav>
+  <!-- Navegação principal -->
+  <nav role="navigation" aria-label="Menu principal">
     <a href="index.html">Sobre Mim</a>
     <a href="formacao.html">Formação</a>
     <a href="portfolio.html">Portfólio</a>
@@ -137,105 +32,101 @@
   </nav>
 
   <!-- Conteúdo principal -->
-  <main>
+  <main id="conteudo-principal" role="main">
     <div class="conteudo">
 
-      <!-- Formação Educacional -->
       <h1>Formação Educacional</h1>
 
       <!-- Graduação -->
-      <div class="container">
+      <div class="bloco">
         <div class="texto">
           <p><strong>Universidade Estadual Paulista Júlio de Mesquita Filho</strong><br>
           Bacharelado em Engenharia Mecânica<br>
           Mar 1996 – Jan 2000<br>
           Habilidades: Microsoft Excel · Comunicação escrita · Atenção a detalhes · Microsoft Word · Resolução de problemas</p>
         </div>
-        <div class="imagens">
+        <div class="imagem">
           <img src="EngMecanica.png" alt="Engenharia Mecânica">
         </div>
       </div>
 
       <!-- Mestrado -->
-      <div class="container">
+      <div class="bloco">
         <div class="texto">
           <p><strong>Universidade de Brasília</strong><br>
           Mestrado em Engenharia Mecânica<br>
           Jul 2001 – Jul 2004<br>
           Bolsista CAPES.<br>
-          Título da dissertação: Simulação Numérica do Escoamento em Dispositivos de Medição de Vazão por Diferença de Pressão: Tubos de Venturi e Condicionadores de Escoamento.<br>
-          Habilidades: Microsoft Excel · Comunicação escrita · Atenção a detalhes · Microsoft Word · Resolução de problemas</p>
+          Título da dissertação: Simulação Numérica do Escoamento em Dispositivos de Medição de Vazão por Diferença de Pressão: Tubos de Venturi e Condicionadores de Escoamento.</p>
         </div>
-        <div class="imagens">
+        <div class="imagem">
           <img src="Venturi2.png" alt="Mestrado Venturi">
         </div>
       </div>
 
       <!-- Pós-graduação -->
-      <div class="container">
+      <div class="bloco">
         <div class="texto">
           <p><strong>Pontifícia Universidade Católica do Rio de Janeiro</strong><br>
           Pós-graduação em Business Intelligence, Machine Learning e Inteligência Artificial<br>
           Mar 2019 – Set 2020<br>
-          Especialização BI MASTER abrangendo Business Intelligence, Big Data, suporte à decisão empresarial com foco em bancos de dados e SQL, programação em Python, Matlab e R, técnicas avançadas de machine learning e deep learning, lógica fuzzy, otimização com algoritmos genéticos e estatística.<br>
-          Habilidades: Microsoft Excel · BI · ETL · Estatística · MATLAB · Lógica Fuzzy · Machine Learning · Comunicação escrita · Análise de dados · Atenção a detalhes · Microsoft Word · Banco de dados · R · Web Scraping · Python</p>
+          Especialização BI MASTER abrangendo Business Intelligence, Big Data, bancos de dados, SQL, Python, R, Matlab, lógica fuzzy, deep learning e estatística.</p>
         </div>
-        <div class="imagens">
+        <div class="imagem">
           <img src="BI_puc.png" alt="Especialização BI">
         </div>
       </div>
 
-      <!-- Experiência Profissional -->
       <h1>Experiência Profissional</h1>
 
-      <div class="container">
-        <div class="imagens">
+      <!-- INPI -->
+      <div class="bloco">
+        <div class="imagem">
           <img src="patents.png" alt="Patentes">
         </div>
         <div class="texto">
           <p><strong>Pesquisador em Propriedade Industrial</strong><br>
           Instituto Nacional da Propriedade Industrial<br>
           Mar 2007 – Presente<br>
-          Pesquisa tecnológica aprofundada na área de Propriedade Industrial, com foco em análise de patentes em múltiplos setores: processos, litígios, TI e transferência de tecnologia.<br>
-          Conquistas: 1º lugar na Divisão de Embalagens (2015, 2016, 2017). 2º e 3º lugar geral em relatórios técnicos (2017 e 2015).<br>
-          Liderança: mentor de dois novos examinadores de patentes (2010 e 2016–2017), chefe da Divisão de Engenharia Mecânica (2012–2013), chefe interino da Divisão de Embalagens (2011–2012).</p>
+          Foco em análise de patentes, liderança técnica, formação de novos examinadores e resultados expressivos em desempenho técnico.</p>
         </div>
       </div>
 
-      <div class="container">
-        <div class="imagens">
+      <!-- Votorantim -->
+      <div class="bloco">
+        <div class="imagem">
           <img src="Votorantim.png" alt="Votorantim">
         </div>
         <div class="texto">
           <p><strong>Engenheiro Mecânico</strong><br>
           Votorantim Metais S.A<br>
           Mar 2005 – Mar 2007<br>
-          Desenvolvimento e implementação de projetos de engenharia de confiabilidade no setor de níquel. Suporte técnico a estudos e iniciativas de confiabilidade com aplicação de RCA, RCM, FTA, FMEA, FMECA, análise de Weibull e Six Sigma.<br>
-          Projetos-chave: Estudo de Confiabilidade de Fornos de Redução (2006), Análise de Falha em Suportes de Eletrodos (2006).</p>
+          Projetos em engenharia de confiabilidade, análises de falha e suporte técnico usando ferramentas como RCA, RCM, FTA, FMEA, Weibull e Six Sigma.</p>
         </div>
       </div>
 
-      <div class="container">
-        <div class="imagens">
+      <!-- Real Cargas -->
+      <div class="bloco">
+        <div class="imagem">
           <img src="RealCargas.png" alt="Real Cargas">
         </div>
         <div class="texto">
           <p><strong>Chefe de Controle Estatístico de Manutenção</strong><br>
           Real Cargas Logística<br>
           Mar 2004 – Fev 2005<br>
-          Responsável por planejar e controlar a manutenção da frota de 250 caminhões. Desenvolvimento e aplicação de KPIs para otimizar desempenho e garantir confiabilidade e eficiência operacional.</p>
+          Gestão da manutenção de frota, desenvolvimento e controle de KPIs para desempenho e confiabilidade operacional.</p>
         </div>
       </div>
 
-      <!-- Idiomas e Certificações -->
-      <div class="container">
+      <!-- Idiomas -->
+      <div class="bloco">
         <div class="texto">
           <h1>Idiomas e Certificações</h1>
           <p>Português – Nativo</p>
           <p>Inglês – Avançado (IELTS B2, Duolingo 125)</p>
           <p>Espanhol – Intermediário</p>
         </div>
-        <div class="imagens">
+        <div class="imagem">
           <img src="world-1138035_1280.jpg" alt="Idiomas e Mundo">
         </div>
       </div>
@@ -244,9 +135,10 @@
   </main>
 
   <!-- Rodapé -->
-  <footer>
-    <p>&copy; 2025 Ronald Martins - Todos os direitos reservados.</p>
+  <footer role="contentinfo">
+    <p>&copy; 2025 Ronald A. Martins - Todos os direitos reservados.</p>
   </footer>
+
 </body>
 </html>
 

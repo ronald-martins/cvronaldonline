@@ -4,142 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobre Mim</title>
-  <style>
-    /* Reset de margens/paddings padrão do navegador */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Define altura e fonte base */
-    html, body {
-      height: 100%;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Layout vertical geral */
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Cabeçalho fixo */
-    header {
-      background-color: #666;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-      flex-shrink: 0;
-    }
-
-    /* Rodapé fixo */
-    footer {
-      background-color: #666;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-      min-height: 64px;
-      font-size: 1rem;
-      line-height: 1.4;
-      flex-shrink: 0;
-    }
-
-    /* Navegação fixa */
-    nav {
-      background-color: #bbb;
-      text-align: center;
-      padding: 0.5rem 0;
-      flex-shrink: 0;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: black;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Área principal que ocupa o espaço restante */
-    main {
-      flex-grow: 1;
-      overflow-y: auto;
-      padding: 1rem;
-      background-color: #f9f9f9;
-    }
-
-    /* Bloco de conteúdo com aparência em cartão */
-    .conteudo {
-      max-width: 960px;
-      margin: auto;
-      background-color: white;
-      padding: 2rem;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    }
-
-    /* Layout lado a lado: texto e imagens */
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: space-between;
-      align-items: stretch;
-    }
-
-    /* Coluna de texto à esquerda */
-    .texto {
-      flex: 2;
-      min-width: 320px;
-      text-align: justify;
-      line-height: 1.8;
-      font-size: 1.05rem;
-    }
-
-    /* Coluna de imagens à direita */
-    .imagens {
-      flex: 1;
-      min-width: 280px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    /* Estilo das imagens */
-    .imagens img {
-      width: 100%;
-      max-height: 48%;
-      object-fit: cover;
-      margin-bottom: 1.5rem;
-      border-radius: 4px;
-    }
-
-    .imagens img:last-child {
-      margin-bottom: 0;
-    }
-
-    h1 {
-      margin-bottom: 1rem;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-    }
-  </style>
+  <link rel="stylesheet" href="estilo.css" />
+  <link rel="stylesheet" href="idioma.css" />
 </head>
 <body>
 
-  <!-- Cabeçalho fixo -->
+  <!-- Links de idioma -->
+  <div class="idiomas" aria-label="Escolha de idioma">
+    <a href="index.html" class="link-pt">PT</a>
+    <a href="index_en.html" class="link-en">EN</a>
+  </div>
+
+  <!-- Link acessível para pular direto para o conteúdo -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Cabeçalho -->
   <header>
-    <h1>Portfólio Pessoal (CV online)</h1>
+    <h1>Portfólio Pessoal - Ronald A. Martins</h1>
   </header>
 
   <!-- Navegação -->
-  <nav>
+  <nav role="navigation" aria-label="Menu principal">
     <a href="index.html">Sobre Mim</a>
     <a href="formacao.html">Formação</a>
     <a href="portfolio.html">Portfólio</a>
@@ -147,33 +32,56 @@
   </nav>
 
   <!-- Conteúdo principal -->
-  <main>
+  <main id="conteudo-principal" role="main">
     <div class="conteudo">
-      <div class="container">
-        <!-- Coluna de texto -->
+      <h1>Sobre Mim</h1>
+
+      <!-- Bloco 1 -->
+      <div class="bloco">
         <div class="texto">
-          <h1>Sobre Mim</h1>
           <p>Meu nome é Ronald A. Martins. Sou engenheiro mecânico com formação pela UNESP e mestrado pela Universidade de Brasília, onde desenvolvi pesquisas voltadas à simulação numérica de escoamentos aplicados a dispositivos de medição de vazão.</p>
+        </div>
+        <div class="imagem">
+          <img src="gears-1236578_1280.jpg" alt="Imagem de engrenagens representando engenharia mecânica">
+        </div>
+      </div>
+
+      <!-- Bloco 2 -->
+      <div class="bloco">
+        <div class="texto">
           <p>Desde 2007, atuo como pesquisador em propriedade industrial no Instituto Nacional da Propriedade Industrial (INPI), com foco em análise de patentes em diversas áreas tecnológicas. Também fui chefe de divisão e tutor de novos examinadores.</p>
+        </div>
+        <div class="imagem">
+          <img src="drawing-8792184_1280.jpg" alt="Desenho técnico relacionado a patentes e tecnologia">
+        </div>
+      </div>
+
+      <!-- Bloco 3 -->
+      <div class="bloco">
+        <div class="texto">
           <p>Atualmente, curso graduação em Ciência de Dados pela UNINTER, com foco em aplicações de IA, machine learning, e business intelligence. Também concluí especialização em BI Master pela PUC-Rio. Tenho conhecimento em Python, R, MATLAB e bancos de dados relacionais e não-relacionais.</p>
+        </div>
+        <div class="imagem">
+          <img src="computer-4795762_1280.jpg" alt="Computador representando ciência de dados e programação">
+        </div>
+      </div>
+
+      <!-- Bloco 4 -->
+      <div class="bloco">
+        <div class="texto">
           <p>Nas horas livres, gosto de viajar, praticar mergulho com cilindro e snorkel, bem como estar sempre em contato com a natureza. Acredito no poder da educação e da tecnologia como transformadoras da sociedade.</p>
         </div>
-
-        <!-- Coluna de imagens alinhada verticalmente ao centro -->
-        <div class="imagens">
-          <img src="gears-1236578_1280.jpg" alt="Engrenagens">
-          <img src="drawing-8792184_1280.jpg" alt="Desenho técnico">
-          <img src="beach-666122_1280.jpg" alt="Praia"> <!-- Nova imagem adicionada -->
+        <div class="imagem">
+          <img src="beach-666122_1280.jpg" alt="Praia representando lazer e contato com a natureza">
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Rodapé fixo -->
-  <footer>
-    <p>&copy; 2025 Ronald Martins - Todos os direitos reservados.</p>
+  <!-- Rodapé -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 Ronald A. Martins - Todos os direitos reservados.</p>
   </footer>
 
 </body>
 </html>
-

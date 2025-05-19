@@ -4,160 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio</title>
-  <style>
-    /* Reset de margens e paddings padrão do navegador */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Fonte base e altura total da página */
-    html, body {
-      height: 100%;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Estrutura vertical da página */
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Cabeçalho fixo com fundo escuro */
-    header {
-      background-color: #666;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-      flex-shrink: 0;
-    }
-
-    /* Rodapé fixo */
-    footer {
-      background-color: #666;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-      flex-shrink: 0;
-    }
-
-    /* Navegação entre páginas */
-    nav {
-      background-color: #bbb;
-      text-align: center;
-      padding: 0.5rem 0;
-      flex-shrink: 0;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: black;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Área principal com rolagem e fundo claro */
-    main {
-      flex-grow: 1;
-      overflow-y: auto;
-      padding: 1rem;
-      background-color: #f9f9f9;
-    }
-
-    /* Bloco de conteúdo com efeito de cartão */
-    .conteudo {
-      max-width: 960px;
-      margin: auto;
-      background-color: white;
-      padding: 2rem;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      text-align: justify;
-      line-height: 1.8; /* espaçamento entre linhas */
-      font-size: 1.05rem; /* tamanho de fonte ajustado */
-    }
-
-    /* Layout flexível com colunas: imagens e texto */
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    /* Coluna de imagens à esquerda */
-    .imagens {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .imagens img {
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 1rem;
-      border-radius: 4px;
-      display: block;
-    }
-
-    /* Coluna de texto à direita */
-    .texto {
-      flex: 1.5;
-      min-width: 400px;
-    }
-
-    h1 {
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      margin-left: 1.5rem;
-    }
-
-    li {
-      margin-bottom: 1.2rem;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-    }
-  </style>
+  <!-- Importa o CSS global do projeto -->
+  <link rel="stylesheet" href="estilo.css" />
+  <link rel="stylesheet" href="idioma.css" />
 </head>
 <body>
 
-  <!-- Cabeçalho fixo -->
-  <header>
-    <h1>Portfólio Pessoal (CV online)</h1>
+  <!-- Links de idioma -->
+  <div class="idiomas" aria-label="Escolha de idioma">
+    <a href="portfolio.html" class="link-pt">PT</a>
+    <a href="portfolio_en.html" class="link-en">EN</a>
+  </div>
+
+  <!-- Link de acessibilidade -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Cabeçalho -->
+  <header role="banner">
+    <h1>Portfólio Pessoal - Ronald A. Martins</h1>
   </header>
 
-  <!-- Navegação entre páginas -->
-  <nav>
+  <!-- Navegação principal -->
+  <nav role="navigation" aria-label="Menu principal">
     <a href="index.html">Sobre Mim</a>
     <a href="formacao.html">Formação</a>
     <a href="portfolio.html">Portfólio</a>
     <a href="contato.html">Contato</a>
   </nav>
 
-  <!-- Conteúdo principal da página -->
-  <main>
+  <!-- Conteúdo principal -->
+  <main id="conteudo-principal" role="main">
     <div class="conteudo">
-      <div class="container">
+      <h1>Portfólio</h1>
 
-        <!-- Coluna de imagens à esquerda -->
-        <div class="imagens">
-          <img src="Venturi.jpg" alt="Venturi">
-          <img src="Interno.jpg" alt="Vista interna">
-          <img src="Flow.png" alt="Esquema de fluxo">
+      <!-- Bloco com imagens à esquerda e texto à direita -->
+      <div class="bloco">
+        <!-- Coluna de imagens (empilhadas verticalmente) -->
+        <div class="imagem">
+          <div><img src="Venturi.jpg" alt="Artigo sobre dispositivo de medição tipo Venturi"></div>
+          <div><img src="Interno.jpg" alt="Vista interna de equipamento de laboratório"></div>
+          <div><img src="Flow.png" alt="Esquema de simulação de fluxo"></div>
         </div>
 
-        <!-- Coluna de texto à direita -->
+        <!-- Coluna de texto -->
         <div class="texto">
-          <h1>Portfólio</h1>
           <p>Abaixo estão listados alguns dos artigos científicos que publiquei durante minha trajetória acadêmica e profissional.</p>
 
           <ul>
@@ -173,15 +63,15 @@
 
           <p>Para obter mais informações, entre em contato através do formulário na seção "Contato" deste site.</p>
         </div>
-
       </div>
     </div>
   </main>
 
-  <!-- Rodapé fixo -->
-  <footer>
-    <p>&copy; 2025 Ronald Martins - Todos os direitos reservados.</p>
+  <!-- Rodapé -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 Ronald A. Martins - Todos os direitos reservados.</p>
   </footer>
 
 </body>
 </html>
+
